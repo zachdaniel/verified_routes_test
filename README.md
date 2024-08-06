@@ -1,18 +1,13 @@
 # Test
 
-To start your Phoenix server:
+I've noticed that verified routes incurs a bunch of compile time dependencies that I can't figure out.
+I’m trying to unravel how this works, but if the router references a module that does a `use MyAppWeb, :verified_routes`,
+this causes the router to be recompiled for modules that are seemingly unrelated.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+For example, the router in this project will recompile whenever `TestWeb.Gettext` is recompiled. If you comment out the compile time
+link to `Test` in the router, the router will no longer recompile when `TestWeb.Gettext` is recompiled.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+I'm only using `TestWeb.Gettext` as an example. People probably don't modify that module often if at all, but its occurring in other projects
+on modules that _do_ change quite often.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+Any ideas?
