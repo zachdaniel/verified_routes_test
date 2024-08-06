@@ -1,0 +1,51 @@
+digraph "xref graph" {
+  "lib/test.ex"
+  "lib/test.ex" -> "lib/test_web.ex" [label="(compile)"]
+  "lib/test.ex" -> "lib/test_web/endpoint.ex"
+  "lib/test_web/endpoint.ex" -> "lib/test_web.ex" [label="(compile)"]
+  "lib/test_web/endpoint.ex" -> "lib/test_web/router.ex"
+  "lib/test_web/router.ex" -> "lib/test.ex" [label="(compile)"]
+  "lib/test_web/router.ex" -> "lib/test_web.ex" [label="(compile)"]
+  "lib/test_web/router.ex" -> "lib/test_web/components/layouts.ex"
+  "lib/test_web/components/layouts.ex" -> "lib/test_web.ex" [label="(compile)"]
+  "lib/test_web/components/layouts.ex" -> "lib/test_web/components/core_components.ex" [label="(export)"]
+  "lib/test_web/components/core_components.ex" -> "lib/test_web/gettext.ex" [label="(compile)"]
+  "lib/test_web/components/layouts.ex" -> "lib/test_web/endpoint.ex"
+  "lib/test_web/components/layouts.ex" -> "lib/test_web/gettext.ex" [label="(export)"]
+  "lib/test_web/components/layouts.ex" -> "lib/test_web/router.ex"
+  "lib/test_web/router.ex" -> "lib/test_web/controllers/page_controller.ex"
+  "lib/test_web/controllers/page_controller.ex" -> "lib/test_web.ex" [label="(compile)"]
+  "lib/test_web/controllers/page_controller.ex" -> "lib/test_web/components/layouts.ex"
+  "lib/test_web/controllers/page_controller.ex" -> "lib/test_web/endpoint.ex"
+  "lib/test_web/controllers/page_controller.ex" -> "lib/test_web/gettext.ex" [label="(export)"]
+  "lib/test_web/controllers/page_controller.ex" -> "lib/test_web/router.ex"
+  "lib/test_web/router.ex" -> "lib/test_web/telemetry.ex"
+  "lib/test.ex" -> "lib/test_web/router.ex"
+  "lib/test/application.ex"
+  "lib/test/application.ex" -> "lib/test/repo.ex"
+  "lib/test/application.ex" -> "lib/test_web/endpoint.ex"
+  "lib/test/application.ex" -> "lib/test_web/telemetry.ex"
+  "lib/test/mailer.ex"
+  "lib/test/repo.ex"
+  "lib/test_web.ex"
+  "lib/test_web/components/core_components.ex"
+  "lib/test_web/components/layouts.ex"
+  "lib/test_web/controllers/error_html.ex"
+  "lib/test_web/controllers/error_html.ex" -> "lib/test_web.ex" [label="(compile)"]
+  "lib/test_web/controllers/error_html.ex" -> "lib/test_web/components/core_components.ex" [label="(export)"]
+  "lib/test_web/controllers/error_html.ex" -> "lib/test_web/endpoint.ex"
+  "lib/test_web/controllers/error_html.ex" -> "lib/test_web/gettext.ex" [label="(export)"]
+  "lib/test_web/controllers/error_html.ex" -> "lib/test_web/router.ex"
+  "lib/test_web/controllers/error_json.ex"
+  "lib/test_web/controllers/page_controller.ex"
+  "lib/test_web/controllers/page_html.ex"
+  "lib/test_web/controllers/page_html.ex" -> "lib/test_web.ex" [label="(compile)"]
+  "lib/test_web/controllers/page_html.ex" -> "lib/test_web/components/core_components.ex" [label="(export)"]
+  "lib/test_web/controllers/page_html.ex" -> "lib/test_web/endpoint.ex"
+  "lib/test_web/controllers/page_html.ex" -> "lib/test_web/gettext.ex" [label="(export)"]
+  "lib/test_web/controllers/page_html.ex" -> "lib/test_web/router.ex"
+  "lib/test_web/endpoint.ex"
+  "lib/test_web/gettext.ex"
+  "lib/test_web/router.ex"
+  "lib/test_web/telemetry.ex"
+}
