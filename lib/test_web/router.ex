@@ -20,7 +20,9 @@ defmodule TestWeb.Router do
     get "/", PageController, :home
   end
 
-  # <- this links the router to the Test module
+  # this links the router to the `Test` module
+  # with this line, making a change to `TestWeb.Gettext ` will recompile the router.
+  # if you comment it out, changes to `GetText` will not cause this to recompile
   Test
 
   # Other scopes may use custom stacks.
